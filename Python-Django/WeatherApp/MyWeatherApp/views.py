@@ -9,7 +9,6 @@ import urllib.request
 def index(request):
     if request.method == 'POST':
         city = request.POST['city']
-        # https: // api.openweathermap.org / data / 2.5 / weather?q = North & Carolina, us & APPID = bd887c19b926086fe67de0e4e872eee9
         res = urllib.request.urlopen('https://api.openweathermap.org/data/2.5/weather?q='+city+
                                      '&APPID=bd887c19b926086fe67de0e4e872eee9').read()
         json_data = json.loads(res)
